@@ -3,7 +3,7 @@ const serchParams = new URLSearchParams({
   fields: 'name,capital,population,flags,languages,',
 });
 function fetchCountries(name) {
-  return fetch(`${BASE_URL}${name}?${serchParams}`).then(response => {
+  return fetch(`${BASE_URL}/${name}?${serchParams}`).then(response => {
     if (!response.ok) {
       throw new Error(response.status);
     }
@@ -11,7 +11,7 @@ function fetchCountries(name) {
   });
 }
 
-fetchCountries('deutschland')
+fetchCountries('deuts')
   .then(data => {
     console.log(data);
   })
